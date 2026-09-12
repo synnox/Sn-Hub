@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalogue &amp; Services | Sn Hub - Logiciels &amp; Informations 100% Gratuits</title>
+<meta name="description" content="Sn Hub - Le hub communautaire qui rend 100% gratuits les logiciels et les informations, inspiré du combat d'Aaron Swartz.">
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&family=Space+Grotesk:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+<script>
+    // Init theme to prevent flash
+    (function() {
+        var saved = localStorage.getItem('snhub_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', saved);
+    })();
+</script>
+</head>
+<body>
+
+<div class="server-ticker">
+    <div class="container">
+        <span class="ticker-status">
+            <span class="live-dot"></span>
+            <span id="discordLiveStatus">Chargement du statut Discord...</span>
+        </span>
+        <a href="https://discord.gg/8KF3BHPZVg" class="ticker-ip" target="_blank" rel="noopener">discord.gg/8KF3BHPZVg &rarr;</a>
+    </div>
+</div>
+
+<header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a href="../index.html" class="logo">SN <span>HUB</span></a>
+        <nav class="main-nav" id="mainNav">
+            <a href="../index.html">Accueil</a>
+            <a href="services.html">Catalogue</a>
+            <a href="../index.html#terminal">CLI</a>
+            <a href="../index.html#security">Sécurité</a>
+            <a href="../index.html#faq">FAQ</a>
+            <a href="about.html">À Propos</a>
+            <div class="nav-actions-mobile">
+                <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-discord btn-sm" target="_blank" rel="noopener">Rejoindre Discord</a>
+            </div>
+        </nav>
+        <div class="nav-actions">
+            <button class="theme-toggle-btn" id="themeToggle" aria-label="Basculer le mode sombre/clair" title="Mode Sombre / Clair">
+                <span class="theme-icon theme-icon-sun">☀️</span>
+                <span class="theme-icon theme-icon-moon">🌙</span>
+            </button>
+            <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-discord btn-sm" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+            Discord
+        </a>
+        <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Rejoindre</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+    </button>
+</div>
+</header>
+
+<main>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="page-eyebrow">Catalogue Sn Hub</div>
+        <h1>Services &amp; Ressources Libres</h1>
+        <p>Explore nos 84+ ressources répertoriées, classées par catégories et accessibles 100% gratuitement sur le serveur.</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <!-- Interactive Search & Filter Controls -->
+        <div class="catalog-controls reveal">
+            <div class="catalog-search-wrap">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" id="catalogSearch" class="catalog-search-input" placeholder="Rechercher un logiciel, outil, guide, base de données...">
+            </div>
+            <div class="catalog-filter-tags" id="categoryFilters">
+                <button class="filter-tag active" data-filter="all">Tous (84+)</button>
+                <button class="filter-tag" data-filter="software">Logiciels</button>
+                <button class="filter-tag" data-filter="tools">Outils &amp; Scripts</button>
+                <button class="filter-tag" data-filter="db">Bases de données</button>
+                <button class="filter-tag" data-filter="guides">Guides &amp; Sécurité</button>
+            </div>
+        </div>
+
+        <div class="catalog-counter" id="catalogCounter">
+            Affichage de <strong>84</strong> ressources disponibles
+        </div>
+
+        <!-- Catalogue Cards Grid -->
+        <div class="features-grid catalog-grid" id="catalogGrid">
+            <!-- Software items -->
+            <div class="feature-card catalog-item" data-category="software" data-name="wallpaper engine fond ecran steam">
+                <div class="drop-head">
+                    <span class="badge badge-software">Logiciel</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Wallpaper Engine</h3>
+                <p>Version complète débloquée avec support des fonds d'écran animés 4K, 60fps et personnalisation poussée sans restriction.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="software" data-name="activateur windows 10 11 pro permanent hwid free">
+                <div class="drop-head">
+                    <span class="badge badge-software">Logiciel</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Activateur Windows Pro</h3>
+                <p>Outil d'activation numérique permanente pour Windows 10 et 11. Zéro adware, zéro script malveillant, 100% propre.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="software" data-name="suite creative montage retouche video photo">
+                <div class="drop-head">
+                    <span class="badge badge-software">Logiciel</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Suite Créative &amp; Montage</h3>
+                <p>Logiciels indispensables de montage vidéo, retouche photo et création graphique débloqués sans abonnement mensuel.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <!-- Tools & Scripts -->
+            <div class="feature-card catalog-item" data-category="tools" data-name="optimiseur pc boost fps debloat windows latence gaming">
+                <div class="drop-head">
+                    <span class="badge badge-tool">Outil &amp; Script</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Optimiseur PC &amp; Debloat</h3>
+                <p>Nettoyage approfondi des processus d'arrière-plan, réduction de l'input lag et optimisation des FPS pour les jeux compétitifs.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="tools" data-name="scraping web automatisation python data crawler bot">
+                <div class="drop-head">
+                    <span class="badge badge-tool">Outil &amp; Script</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Scraping Web &amp; Bots</h3>
+                <p>Modules Python et scripts clé-en-main pour collecter des données web à grande échelle et automatiser vos flux de travail.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="tools" data-name="utilitaires systeme maintenance diagnostique hardware">
+                <div class="drop-head">
+                    <span class="badge badge-tool">Outil &amp; Script</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Vérifié</span>
+                </div>
+                <h3>Boîte à Outils Système</h3>
+                <p>Utilitaires pour diagnostiquer le matériel, réparer les erreurs de registre et gérer facilement les disques et pilotes.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <!-- Databases -->
+            <div class="feature-card catalog-item" data-category="db" data-name="base de donnees adresses compilation datasets sql json">
+                <div class="drop-head">
+                    <span class="badge badge-db">Base de données</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Dataset</span>
+                </div>
+                <h3>Compilation d'adresses &amp; Datasets</h3>
+                <p>Jeux de données publics volumineux formatés en JSON et SQL pour tester des applications, analyser des tendances ou entraîner des modèles.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="db" data-name="dictionnaires wordlists brute test securite pentest">
+                <div class="drop-head">
+                    <span class="badge badge-db">Base de données</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Dataset</span>
+                </div>
+                <h3>Wordlists &amp; Dictionnaires</h3>
+                <p>Collections de listes de mots et dictionnaires pour les audits de sécurité, le pentest éthique et la recherche en robustesse.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Télécharger sur Discord</a>
+                </div>
+            </div>
+
+            <!-- Guides & Security -->
+            <div class="feature-card catalog-item" data-category="guides" data-name="guide dev anti virus securite reverse analyse malware">
+                <div class="drop-head">
+                    <span class="badge badge-guide">Guide &amp; Sécurité</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Tuto</span>
+                </div>
+                <h3>Guide Dev &amp; Anti-Virus</h3>
+                <p>Méthodologie pour coder proprement, analyser les binaires suspects avec VirusTotal &amp; Any.Run, et sécuriser votre environnement.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Consulter sur Discord</a>
+                </div>
+            </div>
+
+            <div class="feature-card catalog-item" data-category="guides" data-name="tutoriel programmation python c++ bot discord dev">
+                <div class="drop-head">
+                    <span class="badge badge-guide">Guide &amp; Sécurité</span>
+                    <span class="drop-status"><i class="dot-verified"></i> Tuto</span>
+                </div>
+                <h3>Tutos Dev (Python &amp; C++)</h3>
+                <p>Guides pratiques rédigés par Synnox pour apprendre à concevoir des bots Discord, des scripts système et des applications performantes.</p>
+                <div class="catalog-card-action">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm btn-block" target="_blank" rel="noopener">Consulter sur Discord</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="noResultsMessage" class="empty-search" style="display:none;">
+            <h3>Aucune ressource trouvée pour cette recherche</h3>
+            <p>Tu cherches un logiciel spécifique qui n'apparaît pas ? Demande-le nous directement !</p>
+            <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Demander sur Discord</a>
+        </div>
+    </div>
+</section>
+
+<!-- Section Demander une ressource depuis services -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="cta reveal">
+            <div class="cta-inner">
+                <h2>Tu ne trouves pas ce que tu cherches ?</h2>
+                <p>Fais une demande de ressource en ouvrant un ticket Discord ou en envoyant un MP à Synnox. C'est 100% gratuit.</p>
+                <div class="cta-actions">
+                    <a href="https://discord.gg/8KF3BHPZVg" class="btn btn-white btn-lg" target="_blank" rel="noopener">Faire une demande sur Discord</a>
+                    <a href="about.html" class="btn btn-ghost btn-lg" style="color:#fff;border-color:#fff;">Lire notre Manifeste</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="../index.html" class="logo">SN <span>HUB</span></a>
+                <p>Le hub qui rend gratuits les logiciels et informations.</p>
+                <div class="social-links">
+                    <a href="https://discord.gg/8KF3BHPZVg" target="_blank" rel="noopener" aria-label="Discord">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.317 4.37a19.79 19.79 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128c.126-.094.252-.192.372-.291a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
+                    </a>
+                    <a href="https://github.com/synnox" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://synnox.github.io/sn/" target="_blank" rel="noopener" aria-label="Site personnel">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="services.html">Catalogue &amp; Services</a></li>
+                    <li><a href="about.html">À Propos &amp; Manifeste</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Communauté</h4>
+                <ul>
+                    <li><a href="https://discord.gg/8KF3BHPZVg" target="_blank" rel="noopener">Rejoindre Discord</a></li>
+                    <li><a href="https://github.com/synnox" target="_blank" rel="noopener">GitHub de Synnox</a></li>
+                    <li><a href="https://synnox.github.io/sn/" target="_blank" rel="noopener">Site personnel</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Info</h4>
+                <ul class="footer-server-info">
+                    <li>100% Gratuit</li>
+                    <li>Logiciels &amp; Informations</li>
+                    <li>Accès 24/7</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sn Hub. Tous droits réservés.</p>
+            <div class="footer-legal">
+                <a href="https://synnox.github.io/sn/" target="_blank" rel="noopener">Site personnel de Synnox</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Lofi Player Widget -->
+<div class="lofi-widget" id="lofiWidget">
+    <button class="lofi-toggle-btn" id="lofiToggleBtn" aria-label="Lecteur d'ambiance lofi" title="Ambiance Lofi / Focus">
+        <span class="lofi-status-dot" id="lofiStatusDot"></span>
+        <span class="lofi-icon" id="lofiIcon">🎧</span>
+        <span class="lofi-label" id="lofiLabel">Lofi Ambient</span>
+    </button>
+</div>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
